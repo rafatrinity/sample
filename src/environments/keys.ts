@@ -1,0 +1,2 @@
+export const PRIVATE_KEY = '<sua chave privada aqui. em caso de dúvidas consulte https://developer.marvel.com/>'
+export const PUBLIC_KEY = '<sua chave publica aqui. em caso de dúvidas consulte https://developer.marvel.com/>'
