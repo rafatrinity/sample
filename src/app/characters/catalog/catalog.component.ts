@@ -24,8 +24,6 @@ export class CatalogComponent implements OnInit {
 
   response: Characters;
   ngOnInit(): void {
-    console.log(this.params);
-    
     this.getCharacters(this.params)
   }
 
