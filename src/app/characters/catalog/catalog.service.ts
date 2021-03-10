@@ -30,9 +30,9 @@ export class CatalogService {
     return this.getCharactersPerPage(query);
   }
 
-  getCharactersPerPage(query): Observable<Characters[]> {
+  getCharactersPerPage(query): Observable<Characters> {
     return this.httpClient
-      .get<Characters[]>(query)
+      .get<Characters>(query)
       .pipe(retry(2), catchError(this.handleError));
   }
 
