@@ -17,6 +17,7 @@ export class CatalogService {
 
   getCharacters(params: Params) {
     let query = environment.baseUrl + 'characters' + environment.auth;
+    if (params.orderBy) query = `${query}&orderBy=${params.orderBy}`;
     if (params.comics) query = `${query}&comics=${params.comics}`;
     if (params.events) query = `${query}&events=${params.events}`;
     if (params.limit) query = `${query}&limit=${params.limit}`;
@@ -24,9 +25,9 @@ export class CatalogService {
       query = `${query}&modifiedSince=${params.modifiedSince}`;
     if (params.name) query = `${query}&name=${params.name}`;
     if (params.offset) query = `${query}&offset=${params.offset}`;
-    if (params.orderBy) query = `${query}&orderBy=${params.orderBy}`;
     if (params.series) query = `${query}&series=${params.series}`;
     if (params.stories) query = `${query}&stories=${params.stories}`;
+    if (params.nameStartsWith) query = `${query}&nameStartsWith=${params.nameStartsWith}`;
     return this.getCharactersPerPage(query);
   }
 

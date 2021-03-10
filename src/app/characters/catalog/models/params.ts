@@ -6,11 +6,11 @@ export interface Params {
   series: string;
   events: string;
   stories: string;
-  orderBy: params;
+  orderBy: OrderBy;
   limit: number;
   offset: number;
 }
-enum params {
+export enum OrderBy {
   nameA_Z = 'name',
   nameZ_A = '-name',
   currentFirst = 'modified',

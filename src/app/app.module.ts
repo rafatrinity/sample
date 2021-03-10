@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 import { CharactersModule } from './characters/characters.module';
 
 @NgModule({
@@ -12,7 +11,6 @@ import { CharactersModule } from './characters/characters.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     CharactersModule
   ],
   providers: [],
