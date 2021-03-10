@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError, isEmpty } from 'rxjs/operators';
 import { Characters } from './models/characters';
-import { environment } from '../../../environments/environment'
+import { Params } from './models/params';
+import { environment } from '../../../environments/environment';
 import {
   HttpClient,
   HttpErrorResponse,
@@ -13,14 +14,26 @@ import {
 })
 export class CatalogService {
   constructor(private httpClient: HttpClient) {}
-  getCharacters(Page: number, ItensPerPage: number){
 
+  getCharacters(params: Params) {
+    let query = environment.baseUrl + 'characters' + environment.auth;
+    if (params.comics) query = `${query}&comics=${params.comics}`;
+    if (params.events) query = `${query}&events=${params.events}`;
+    if (params.limit) query = `${query}&limit=${params.limit}`;
+    if (params.modifiedSince)
+      query = `${query}&modifiedSince=${params.modifiedSince}`;
+    if (params.name) query = `${query}&name=${params.name}`;
+    if (params.offset) query = `${query}&offset=${params.offset}`;
+    if (params.orderBy) query = `${query}&orderBy=${params.orderBy}`;
+    if (params.series) query = `${query}&series=${params.series}`;
+    if (params.stories) query = `${query}&stories=${params.stories}`;
+    return this.getCharactersPerPage(query);
   }
-  getCharactersPerPage(): Observable<Characters[]> {
-    return this.httpClient.get<Characters[]>(this.url)
-      .pipe(
-        retry(2),
-        catchError(this.handleError))
+
+  getCharactersPerPage(query): Observable<Characters[]> {
+    return this.httpClient
+      .get<Characters[]>(query)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   // Manipulação de erros
@@ -31,9 +44,10 @@ export class CatalogService {
       errorMessage = error.error.message;
     } else {
       // Erro ocorreu no lado do servidor
-      errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
+      errorMessage =
+        `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
     }
     console.log(errorMessage);
     return throwError(errorMessage);
-  };
+  }
 }
