@@ -46,6 +46,6 @@ testem.log
 Thumbs.db
 
 # keys
-keys.ts
+#**.key**
 **.pem
 **.env
