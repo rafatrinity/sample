@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError, isEmpty } from 'rxjs/operators';
-import { Characters } from './models/characters';
+import { retry, catchError, map } from 'rxjs/operators';
+import { Response, Character } from './models/characters';
 import { Params } from './models/params';
 import { environment } from '../../../environments/environment';
 import {
@@ -31,10 +31,11 @@ export class CatalogService {
     return this.getCharactersPerPage(query);
   }
 
-  getCharactersPerPage(query): Observable<Characters> {
+  getCharactersPerPage(query): Observable<Character[]> {
     return this.httpClient
-      .get<Characters>(query)
-      .pipe(retry(2), catchError(this.handleError));
+      .get<Response>(query)
+      .pipe( map((response: Response)=>response.data.results),
+        retry(2), catchError(this.handleError));
   }
 
   // Manipulação de erros

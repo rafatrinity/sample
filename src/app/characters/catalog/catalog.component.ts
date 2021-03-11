@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CatalogService } from './catalog.service';
-import { Characters } from './models/characters';
+import { Response, Character } from './models/characters';
 import { Params, OrderBy } from './models/params';
 @Component({
   selector: 'app-catalog',
@@ -11,7 +11,7 @@ export class CatalogComponent implements OnInit {
   constructor(private service: CatalogService) {}
   params: Params = {
     name: '',
-    nameStartsWith: 'Air',
+    nameStartsWith: '',
     modifiedSince: '',
     comics: '',
     series: '',
@@ -22,7 +22,7 @@ export class CatalogComponent implements OnInit {
     offset: null
   };
 
-  response: Characters;
+  characters: Character[];
   ngOnInit(): void {
     this.getCharacters(this.params)
   }
@@ -30,8 +30,8 @@ export class CatalogComponent implements OnInit {
   getCharacters(params: Params) {
     this.service
       .getCharacters(params)
-      .subscribe((characters: Characters) => {
-        this.response = characters;
+      .subscribe((characters: Character[]) => {
+        this.characters = characters;
         console.log(characters);
       });
   }
