@@ -1,1 +1,31 @@
-<pre>{{ characters | json }}</pre>
+<ng-container>
+  <div class="row">
+    <div class="col" *ngFor="let character of characters">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ character.name }}</mat-card-title>
+          <mat-card-subtitle>{{ character.id }}</mat-card-subtitle>
+        </mat-card-header>
+        <div style="text-align-last: center; object-fit: cover; max-height: 250px;">
+          <img
+            mat-card-image
+            src="{{ character.thumbnail.path }}.{{
+              character.thumbnail.extension
+            }}"
+            alt="{{ character.modified }}"
+          />
+        </div>
+        <mat-card-content>
+          <p>
+            {{ character.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</ng-container>

@@ -17,7 +17,7 @@ export class CatalogComponent implements OnInit {
     series: '',
     events: '',
     stories: '',
-    orderBy: OrderBy.currentFirst,
+    orderBy: OrderBy.oldFirst,
     limit: null,
     offset: null
   };
@@ -34,5 +34,5 @@ export class CatalogComponent implements OnInit {
         this.characters = characters;
         console.log(characters);
       });
-  }
+  } 
 }
