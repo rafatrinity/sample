@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   baseUrl: `https://gateway.marvel.com:443/v1/public/`,
   auth: `?ts=${timestamp}&apikey=${PUBLIC_KEY}&hash=${hash}`,
+  assets: '/assets/',
   settings: {
     appErrorPrefix: '[Sample Error] ',
     appTitle: 'Sample',

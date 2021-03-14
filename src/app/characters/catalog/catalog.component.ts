@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CatalogService } from './catalog.service';
-import { Response, Character } from './models/characters';
+import { Character } from './models/characters';
 import { Params, OrderBy } from './models/params';
+import { environment } from 'src/environments/environment'
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
@@ -21,6 +22,8 @@ export class CatalogComponent implements OnInit {
     limit: null,
     offset: null
   };
+
+  env = environment.assets;
 
   characters: Character[];
   ngOnInit(): void {

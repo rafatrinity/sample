@@ -2,7 +2,7 @@
   <div class="col" *ngFor="let character of characters">
     <mat-card class="example-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar class="example-header-image" style="background-image: url('{{env}}icon_ironman.png');"></div>
         <mat-card-title>{{ character.name }}</mat-card-title>
         <mat-card-subtitle>{{ character.id }}</mat-card-subtitle>
       </mat-card-header>
