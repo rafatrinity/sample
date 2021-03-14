@@ -5,11 +5,29 @@
 .example-card:hover .descricao{
   display:block;
   position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
-  padding-bottom: 0;
+  border-radius: 10px;
   text-align-last: center;
-  margin-top: -40%;
+  margin-top: -50%;
+  animation-duration: 1s;
+  animation-name: slidein;
 }
+
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 .example-card {
     max-width: 420px;
     min-width: 350px;
@@ -26,8 +44,10 @@
 }
 .example-card:hover .mat-card-image{
   z-index: -1;
-  filter: blur(1px) brightness(0.5) sepia(0.3);
+  filter: blur(1px) brightness(0.8) sepia(0.3);
   width: max-content;
+  padding-left: 1em;
+  padding-right: 1em;
   transition: 500ms;
 }
   .example-header-image {
