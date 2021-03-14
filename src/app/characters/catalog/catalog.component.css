@@ -51,7 +51,7 @@
   transition: 500ms;
 }
   .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-image: url('../../../assets/icon_ironman.png');
     background-size: cover;
   }
   
