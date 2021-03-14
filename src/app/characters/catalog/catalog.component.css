@@ -51,7 +51,7 @@
   transition: 500ms;
 }
   .example-header-image {
-    background-image: url('../../../assets/icon_ironman.png');
+    background-image: url('/assets/icon_ironman.png');
     background-size: cover;
   }
   
