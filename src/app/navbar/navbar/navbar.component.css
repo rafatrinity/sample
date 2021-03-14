@@ -1,0 +1,16 @@
+.mobnav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 99%;
+    z-index: 1;
+    height: 25%; /* as the half of the width */
+    border-top-left-radius: 1100%;  /* 100px of height + 10px of border */
+    border-top-right-radius: 1100%; /* 100px of height + 10px of border */
+    border: 10px solid gray;
+    border-bottom: 0;
+    margin-bottom: -5em;
+}
+.nav{
+
+}

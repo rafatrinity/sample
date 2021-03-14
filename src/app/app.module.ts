@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CharactersModule } from './characters/characters.module';
+import { NavbarModule } from './navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { CharactersModule } from './characters/characters.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CharactersModule
+    CharactersModule,
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
