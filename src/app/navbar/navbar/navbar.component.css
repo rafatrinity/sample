@@ -41,6 +41,16 @@ fa-icon{
     z-index: 2;
     margin-left: 2em;
     margin-right: 2em;
+    font-size: larger;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+mat-toolbar-row:hover fa-icon{
+    z-index: 2;
+    margin-left: 2em;
+    margin-right: 2em;
+    font-size: larger;
+    color: rgb(162, 255, 255);
 }
 #fst{
     margin-left: 25%;
