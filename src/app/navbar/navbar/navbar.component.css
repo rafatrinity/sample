@@ -2,14 +2,53 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    max-width: 99%;
+    width: 200%;
+    margin-left: -50%;
+    padding-bottom: 12em;
     z-index: 1;
-    height: 25%; /* as the half of the width */
-    border-top-left-radius: 1100%;  /* 100px of height + 10px of border */
-    border-top-right-radius: 1100%; /* 100px of height + 10px of border */
-    border: 10px solid gray;
-    border-bottom: 0;
-    margin-bottom: -5em;
+    height: 15em; 
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-top-left-radius: 100%;  
+    border-top-right-radius: 100%; 
+    background-color: rgba(40, 40, 40, 0.8);
+    margin-bottom: -10em;
+}
+.mobnav-view{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    margin-left: -50%;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    height: 16em; 
+    padding-top: 1em;
+    text-align: center;
+    border-top-left-radius: 100%;  
+    border-top-right-radius: 100%; 
+    background-image: linear-gradient(gray, black, black, black);
+    margin-bottom: -12.6em;
+}
+
+mat-toolbar-row{
+    border-top-left-radius: 100%;  
+    border-top-right-radius: 100%; 
+    padding: 2em;
+    text-align: center;
+    z-index: 3;
+}
+fa-icon{
+    z-index: 2;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+#fst{
+    margin-left: 25%;
+}
+p{
+    color: aliceblue;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .nav{
 
