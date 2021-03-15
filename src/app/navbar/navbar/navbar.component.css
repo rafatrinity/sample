@@ -3,6 +3,10 @@
     bottom: 0;
     left: 0;
     width: 200%;
+    padding-left: 50%;
+    padding-right: 50%;
+    align-items: center;
+    text-align: center;
     margin-left: -50%;
     padding-bottom: 12em;
     z-index: 1;
@@ -33,14 +37,17 @@
 mat-toolbar-row{
     border-top-left-radius: 100%;  
     border-top-right-radius: 100%; 
-    padding: 2em;
+    padding-top: 1em;
+    padding-left: 0;
+    padding-right: 0;
+    align-items: center;
     text-align: center;
     z-index: 3;
 }
 fa-icon{
     z-index: 2;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 9%;
+    margin-right: 9%;
     font-size: larger;
     color: rgba(255, 255, 255, 0.6);
 }
@@ -53,8 +60,9 @@ mat-toolbar-row:hover fa-icon{
     color: rgb(162, 255, 255);
 }
 #fst{
-    margin-left: 25%;
+    /* margin-left: 25%; */
 }
+
 p{
     color: aliceblue;
     font-size: 18px;
