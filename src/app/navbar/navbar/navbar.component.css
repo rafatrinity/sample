@@ -35,7 +35,6 @@
 }
 
 mat-toolbar-row{
-    font-family: 'Nunito', sans-serif;
     border-top-left-radius: 100%;  
     border-top-right-radius: 100%; 
     padding-top: 1em;
@@ -45,32 +44,22 @@ mat-toolbar-row{
     text-align: center;
     z-index: 3;
 }
-fa-icon{
+.neon_img{
     z-index: 2;
     margin-left: 9%;
     margin-right: 9%;
     font-size: larger;
-    color: rgba(255, 255, 255, 0.6);
-    filter: blur(0);
+    fill: rgba(255,255,255,0.1);
+    stroke: rgba(255,255,255,0.1);
+    filter: blur(0) drop-shadow(-5px 5px 5px black);
 }
 
-@keyframes neon{
-    from{
-        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.6));
-    } to{
-        filter: drop-shadow(0 0 60px rgb(78, 240, 255));
-    }
+.neon_img.on{
+    fill: white;
+    stroke: rgb(78, 240, 255);
+    filter: blur(1px) drop-shadow(0 0 10px rgb(78, 240, 255))  drop-shadow(0 0 200px rgb(78, 240, 255)) ;
 }
-fa-icon{
-    /* animation: neon 3s infinite ease-in-out; */
-}
-mat-toolbar-row:hover fa-icon{
-    color: rgb(162, 255, 255);
-    /* animation: neon 1s alternate infinite ease-in-out; */
-}
-#fst{
-    /* margin-left: 25%; */
-}
+
 
 p{
     color: aliceblue;

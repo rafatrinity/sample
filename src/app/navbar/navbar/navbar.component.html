@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="nav d-none d-lg-block"></mat-toolbar>
 <mat-toolbar class="mobnav d-block d-lg-none">
-  <mat-toolbar-row>
-    <fa-icon (click)="turnOn('1')" id="fst" [icon]="faGamepad"></fa-icon>
-    <fa-icon [icon]="faChartPie" class="mb-4"></fa-icon>
-    <fa-icon [icon]="faSearch" class="mb-4"></fa-icon>
-    <fa-icon [icon]="faUser" class="test"></fa-icon>
+  <mat-toolbar-row class="area_neon">
+    <fa-icon (click)="turnOn('1')" id="1" class="neon_img" [icon]="faGamepad"></fa-icon>
+    <fa-icon (click)="turnOn('2')" id="2" [icon]="faChartPie" class="mb-4 neon_img"></fa-icon>
+    <fa-icon (click)="turnOn('3')" id="3" [icon]="faSearch" class="mb-4 neon_img"></fa-icon>
+    <fa-icon (click)="turnOn('4')" id="4" [icon]="faUser" class="neon_img"></fa-icon>
   </mat-toolbar-row>
 </mat-toolbar>
 <span class="mobnav-view d-block d-lg-none">

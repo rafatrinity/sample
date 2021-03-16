@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { faGamepad, faChartPie, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGamepad,
+  faChartPie,
+  faSearch,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -15,8 +20,9 @@ export class NavbarComponent implements OnInit {
   faUser = faUser;
   env = environment.assets;
   ngOnInit(): void {}
-  
-  turnOn(id){
-    console.log("PASSEI", id);
+
+  turnOn(id) {
+    let imagem = document.getElementById(id);
+    imagem.setAttribute('class', imagem.getAttribute('class').concat(' on'));
   }
 }
