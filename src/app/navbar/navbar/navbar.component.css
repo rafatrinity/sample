@@ -50,12 +50,14 @@ mat-toolbar-row{
     margin-left: 9%;
     margin-right: 9%;
     font-size: larger;
+    color: rgba(255,255,255,0.5);
     fill: rgba(255,255,255,0.1);
     stroke: rgba(255,255,255,0.1);
     filter: blur(0) drop-shadow(-5px 5px 5px black);
 }
 
 .neon_img.on{
+    color: white;
     fill: white;
     stroke: rgb(78, 240, 255);
     filter: blur(1px) drop-shadow(0 0 10px rgb(78, 240, 255))  drop-shadow(0 0 200px rgb(78, 240, 255)) ;
@@ -66,6 +68,7 @@ p{
     color: aliceblue;
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
+    filter: blur(0) drop-shadow(-5px 5px 5px black);
 }
 .nav{
 
