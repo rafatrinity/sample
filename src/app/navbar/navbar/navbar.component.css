@@ -35,6 +35,7 @@
 }
 
 mat-toolbar-row{
+    font-family: 'Nunito', sans-serif;
     border-top-left-radius: 100%;  
     border-top-right-radius: 100%; 
     padding-top: 1em;
@@ -50,10 +51,22 @@ fa-icon{
     margin-right: 9%;
     font-size: larger;
     color: rgba(255, 255, 255, 0.6);
+    filter: blur(0);
 }
 
+@keyframes neon{
+    from{
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.6));
+    } to{
+        filter: drop-shadow(0 0 60px rgb(78, 240, 255));
+    }
+}
+fa-icon{
+    /* animation: neon 3s infinite ease-in-out; */
+}
 mat-toolbar-row:hover fa-icon{
     color: rgb(162, 255, 255);
+    /* animation: neon 1s alternate infinite ease-in-out; */
 }
 #fst{
     /* margin-left: 25%; */
