@@ -1,16 +1,16 @@
 <div class="container">
-  <div id="begin" class="begin on">
+  <div id="begin" class="begin">
     <p>Let's play divination game.</p>
     <button (click)="begin()">Let's Go!</button>
   </div>
 
-  <div id="game" class="game off">
-    <div class="pair">
+  <div id="game" class="game d-none">
+    <div id="pair" class="pair">
         <p>{{ask}}</p>
       <button (click)="isPair('yes')">yes</button>
       <button (click)="isPair('no')">no</button>
     </div>
-    <div class="one">
+    <div id="one" class="one d-none">
       <button (click)="isOne('yes')">yes</button>
       <button (click)="isOne('no')">no</button>
     </div>

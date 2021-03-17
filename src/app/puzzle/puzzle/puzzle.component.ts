@@ -18,8 +18,8 @@ export class PuzzleComponent implements OnInit {
   ngOnInit(): void {}
 
   begin() {
-    document.getElementById('begin').setAttribute('class', 'begin off');
-    document.getElementById('game').setAttribute('class', 'game on');
+    document.getElementById('begin').setAttribute('class', 'begin d-none');
+    document.getElementById('game').setAttribute('class', 'game d-block');
     this.start = true;
   }
 
@@ -33,16 +33,18 @@ export class PuzzleComponent implements OnInit {
       this.position[this.count] = 1;
     }
     this.count++;
-    //? manipular dom
+    document.getElementById('pair').setAttribute('class', 'pair d-none');
+    document.getElementById('one').setAttribute('class', 'one d-block');
   }
 
   isOne(resp: string) {
     if (resp == 'yes') {
-      this.puzzle = this.magic();
+      this.magic();
       this.resetVariables();
     }
     else{
-      //? manipular dom
+      document.getElementById('pair').setAttribute('class', 'pair d-block');
+      document.getElementById('one').setAttribute('class', 'one d-none');  
     }
   }
 
@@ -54,7 +56,7 @@ export class PuzzleComponent implements OnInit {
     return c;
   }
 
-  magic():number {
+  magic() {
     let a = 0;
     let b = 0;
     if (this.odd == 0) return this.pot(2, this.pair);
@@ -63,7 +65,8 @@ export class PuzzleComponent implements OnInit {
         if (this.position[i] == 1) b += this.pot(2, i); //impar
       }
       a = this.pot(2, this.pair + this.odd);
-      return a + b;
+      this.puzzle = a + b;
+      //?manipular dom
     }
   }
 
