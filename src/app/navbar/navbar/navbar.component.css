@@ -60,7 +60,7 @@ mat-toolbar-row{
     color: white;
     fill: white;
     stroke: rgb(78, 240, 255);
-    filter: drop-shadow(0 0 10px rgb(78, 240, 255))  drop-shadow(0 0 200px rgb(78, 240, 255)) ;
+    filter: drop-shadow(0 0 10px rgb(78, 240, 255))  drop-shadow(0 0 200px rgb(78, 240, 255));
 }
 
 
