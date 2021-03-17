@@ -21,19 +21,18 @@ export class NavbarComponent implements OnInit {
   env = environment.assets;
   ngOnInit(): void {}
 
-  turnOff(){
-    let imagem1 = document.getElementById('1');
-    let imagem2 = document.getElementById('2');
-    let imagem3 = document.getElementById('3');
-    let imagem4 = document.getElementById('4');
-    imagem1.setAttribute('class','neon_img');
-    imagem2.setAttribute('class','mb-4 neon_img');
-    imagem3.setAttribute('class','mb-4 neon_img');
-    imagem4.setAttribute('class','neon_img');
+  turnOff() {
+    let img;
+    for (let i = 1; i < 9; i++) {
+      img = document.getElementById(i.toString());
+      i == 6 || i == 7
+        ? img.setAttribute('class', 'mb-4 neon_img')
+        : img.setAttribute('class', 'neon_img');
+    }
   }
   turnOn(id) {
     this.turnOff();
-    let imagem = document.getElementById(id);
-    imagem.setAttribute('class', imagem.getAttribute('class').concat(' on'));
+    let img = document.getElementById(id);
+    img.setAttribute('class', img.getAttribute('class').concat(' on'));
   }
 }

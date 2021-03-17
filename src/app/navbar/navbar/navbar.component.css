@@ -70,6 +70,12 @@ p{
     font-family: 'Courier New', Courier, monospace;
     filter: blur(0) drop-shadow(-5px 5px 5px black);
 }
+.nav.neon_img{
+    align-self: center;
+}
 .nav{
-
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    padding-top: 1em;
 }
