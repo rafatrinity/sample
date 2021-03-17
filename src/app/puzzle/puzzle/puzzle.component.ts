@@ -17,10 +17,8 @@ export class PuzzleComponent implements OnInit {
   }
 
   begin(){
-    let on=document.getElementById('begin');
-    let off=document.getElementById('game');
-    on.setAttribute('class','begin off');
-    off.setAttribute('class','game on');
+    document.getElementById('begin').setAttribute('class','begin off');
+    document.getElementById('game').setAttribute('class','game on');
   }
 
 }
