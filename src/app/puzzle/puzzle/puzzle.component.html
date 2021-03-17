@@ -5,7 +5,14 @@
   </div>
 
   <div id="game" class="game off">
-    <button (click)="puzzleAsk('yes')">yes</button>
-    <button (click)="puzzleAsk('no')">no</button>
+    <div class="pair">
+        <p>{{ask}}</p>
+      <button (click)="isPair('yes')">yes</button>
+      <button (click)="isPair('no')">no</button>
+    </div>
+    <div class="one">
+      <button (click)="isOne('yes')">yes</button>
+      <button (click)="isOne('no')">no</button>
+    </div>
   </div>
 </div>

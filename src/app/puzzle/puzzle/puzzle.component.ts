@@ -6,17 +6,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./puzzle.component.css'],
 })
 export class PuzzleComponent implements OnInit {
+  start: boolean = true;
+  ask: string;
+  pair: number = 0;
+  odd: number = 0;
+  count: number = 0;
+  position = [];
+  puzzle: number;
   constructor() {}
 
   ngOnInit(): void {}
 
-  puzzleAsk(resp: string) {
-    
-  }
-
   begin() {
     document.getElementById('begin').setAttribute('class', 'begin off');
     document.getElementById('game').setAttribute('class', 'game on');
+    this.start = true;
+  }
+
+  isPair(resp: string) {
+    if (this.start == true) this.ask = 'Esse número é par?';
+    else this.ask = 'O resultado da divisão é par?';
+    this.start = false;
+    if (resp == 'yes') this.pair++;
+    else {
+      this.odd++;
+      this.position[this.count] = 1;
+    }
+    this.count++;
+    //? manipular dom
+  }
+
+  isOne(resp: string) {
+    if (resp == 'yes') {
+      this.puzzle = this.magic();
+      this.resetVariables();
+    }
+    else{
+      //? manipular dom
+    }
   }
 
   pot(a: number, b: number): number {
@@ -27,16 +54,26 @@ export class PuzzleComponent implements OnInit {
     return c;
   }
 
-  magica(par: number, impar: number, posicao, n: number) {
-    let a = 0,
-      b = 0;
-    if (impar == 0) return this.pot(2, par);
+  magic():number {
+    let a = 0;
+    let b = 0;
+    if (this.odd == 0) return this.pot(2, this.pair);
     else {
-      for (let i = 0; i < n; i++) {
-        if (posicao + i == 1) b += this.pot(2, i); //impar
+      for (let i = 0; i < this.count; i++) {
+        if (this.position[i] == 1) b += this.pot(2, i); //impar
       }
-      a = this.pot(2, par + impar);
+      a = this.pot(2, this.pair + this.odd);
       return a + b;
     }
+  }
+
+  resetVariables() {
+    this.start = true;
+    this.ask = '';
+    this.pair = 0;
+    this.odd = 0;
+    this.count = 0;
+    this.puzzle = 0;
+    this.position = [];
   }
 }
