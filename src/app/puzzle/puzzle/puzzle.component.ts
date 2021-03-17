@@ -13,7 +13,14 @@ export class PuzzleComponent implements OnInit {
   }
 
   puzzleAsk(resp: string){
-    
+
+  }
+
+  begin(){
+    let on=document.getElementById('begin');
+    let off=document.getElementById('game');
+    on.setAttribute('class','begin off');
+    off.setAttribute('class','game on');
   }
 
 }

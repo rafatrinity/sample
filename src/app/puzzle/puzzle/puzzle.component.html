@@ -1,6 +1,11 @@
-<button (click)="puzzleAsk('no')">
-    yes
-</button>
-<button (click)="puzzleAsk('no')">
-    no
-</button>
+<div class="container">
+  <div id="begin" class="begin on">
+    <p>Let's play divination game.</p>
+    <button (click)="begin()">Let's Go!</button>
+  </div>
+
+  <div id="game" class="game off">
+    <button (click)="puzzleAsk('yes')">yes</button>
+    <button (click)="puzzleAsk('no')">no</button>
+  </div>
+</div>
