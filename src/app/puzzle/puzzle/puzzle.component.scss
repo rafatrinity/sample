@@ -32,11 +32,16 @@ body {
   text-align: center;
   align-content: center;
   height: 100vh;
+  perspective: 600px;
 }
-
+.img{
+  transition: all 0.75s ease-out;
+}
 .wrapper {
   padding-top: 6%;
   padding-bottom: 4%;
+  max-width: 450px;
+  margin: auto;
   
   &:focus {
     outline: 0;
@@ -44,6 +49,7 @@ body {
 }
 
 .clash-card {
+  transform-style: preserve-3d;
   background: rgb(46, 46, 46);
   width: 300px;
   display: inline-block;
@@ -75,7 +81,7 @@ body {
 }
 
 
-.clash-card__unit-name {
+.resp {
   font-size: 26px;
   color: rgb(214, 255, 255);
   font-weight: 900;
@@ -85,6 +91,7 @@ body {
 .clash-card__unit-description {
   padding: 20px;
   margin-bottom: 10px;  
+  transition: all 0.75s ease-out;
 }
 
 .clash-card__unit-stats--barbarian {

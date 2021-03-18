@@ -4,7 +4,7 @@
   <div class="wrapper">
     <div class="clash-card barbarian">
       <div class="clash-card__image clash-card__image--barbarian">
-        <img
+        <img class="img"
           src="{{env}}/images/drstrange.png"
           alt="drstrange"
         />
@@ -35,7 +35,7 @@
             </div>
             <div id="puzzle" class="puzzle d-none">
               <p>the number chosen was...</p>
-              <p class="clash-card__unit-name">
+              <p class="resp">
                 {{ puzzle }}
               </p>
               <button mat-fab color="a" (click)="remake()">remake</button>
