@@ -77,9 +77,8 @@ export class PuzzleComponent implements OnInit {
     this.count = 0;
     this.puzzle = 0;
     this.position = [];
-    
+    document.getElementById('one').setAttribute('class', 'one d-none');
+    document.getElementById('game').setAttribute('class', 'game d-none');
+    document.getElementById('begin').setAttribute('class', 'begin d-block');  
   }
-  document.getElementById('one').setAttribute('class', 'one d-none');
-  document.getElementById('game').setAttribute('class', 'game d-none');
-  document.getElementById('begin').setAttribute('class', 'begin d-block');
 }
