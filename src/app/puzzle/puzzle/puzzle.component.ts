@@ -12,26 +12,39 @@ export class PuzzleComponent implements OnInit {
   count: number = 0;
   position = [];
   puzzle: number;
+  divide: string;
   constructor() {}
 
   ngOnInit(): void {}
 
   begin() {
+    this.ask = 'Is that number even?';
     document.getElementById('begin').setAttribute('class', 'begin d-none');
     document.getElementById('puzzle').setAttribute('class', 'puzzle d-none');
+    document.getElementById('divide').setAttribute('class', 'divide d-none');
     document.getElementById('game').setAttribute('class', 'game d-block');
     document.getElementById('even').setAttribute('class', 'even d-block');
   }
 
   isEven(resp: string) {
     this.ask = 'Is the result of the division even?';
-    if (resp == 'yes') this.even++;
-    else {
+    if (resp == 'yes') {
+      this.even++;
+      this.divide = 'subtract divide by 2.';
+      document.getElementById('even').setAttribute('class', 'even d-none');
+      document.getElementById('divide').setAttribute('class', 'divide d-block');
+    } else {
       this.odd++;
       this.position[this.count] = 1;
+      this.divide = 'subtract one and divide by 2.';
+      document.getElementById('even').setAttribute('class', 'even d-none');
+      document.getElementById('divide').setAttribute('class', 'divide d-block');
     }
     this.count++;
-    document.getElementById('even').setAttribute('class', 'even d-none');
+  }
+
+  ok() {
+    document.getElementById('divide').setAttribute('class', 'divide d-none');
     document.getElementById('one').setAttribute('class', 'one d-block');
   }
 
@@ -62,7 +75,7 @@ export class PuzzleComponent implements OnInit {
       a = this.pot(2, this.even + this.odd);
       this.puzzle = a + b;
       console.log(this.puzzle);
-      
+
       document.getElementById('one').setAttribute('class', 'one d-none');
       document.getElementById('puzzle').setAttribute('class', 'puzzle d-block');
     }

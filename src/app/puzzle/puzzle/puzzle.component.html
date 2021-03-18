@@ -1,6 +1,7 @@
 <div class="container">
   <div id="begin" class="begin">
     <p>Let's play divination game.</p>
+    <p>think of a number greater than one.</p>
     <button (click)="begin()">Let's Go!</button>
   </div>
 
@@ -14,6 +15,10 @@
       <p>the result of the division is one?</p>
       <button (click)="isOne('yes')">yes</button>
       <button (click)="isOne('no')">no</button>
+    </div>
+    <div id="divide" class="divide d-none">
+        <p>{{divide}}</p>
+        <button (click)="ok()" >ok</button>
     </div>
     <div id="puzzle" class="puzzle d-none">
       <p>the number chosen was...</p>
