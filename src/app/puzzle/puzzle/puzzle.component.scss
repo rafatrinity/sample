@@ -1,11 +1,13 @@
-.container{
-    height: 100vh;
-}
 p{
     color: aliceblue;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    font-size: 3em;
+    // font-size: 3em;
+}
+
+.mat-mini-fab{
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
@@ -18,7 +20,6 @@ $barbarian: #EC9B3B;
 }
 
 body {
-  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
   background-size: cover;
   font: 14px/20px "Lato", Arial, sans-serif;
@@ -29,12 +30,13 @@ body {
 .slide-container {
   margin: auto;
   text-align: center;
+  align-content: center;
   height: 100vh;
 }
 
 .wrapper {
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 6%;
+  padding-bottom: 4%;
   
   &:focus {
     outline: 0;
@@ -49,6 +51,7 @@ body {
   border-radius: $border-radius-size + 5;
   position: relative;
   text-align: center;
+  margin-top: 3.5em;
   box-shadow: -1px 15px 30px -12px rgb(116, 255, 255);
   z-index: 9999;
 }
@@ -56,7 +59,7 @@ body {
 .clash-card__image {
   position: relative;
   height: 230px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   border-top-left-radius: $border-radius-size;
   border-top-right-radius: $border-radius-size;
 }
@@ -64,10 +67,10 @@ body {
 .clash-card__image--barbarian {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
   img {
-    width: 330px;
+    width: 300px;
     position: absolute;    
-    top: -105px;
-    left: 0px;
+    top: -95px;
+    left: 10px;
   }
 }
 
