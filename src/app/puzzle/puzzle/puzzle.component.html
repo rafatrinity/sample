@@ -1,4 +1,3 @@
-<div class="container">
   <div id="begin" class="begin">
     <p>Let's play divination game.</p>
     <p>think of a number greater than one.</p>
@@ -17,15 +16,46 @@
       <button (click)="isOne('no')">no</button>
     </div>
     <div id="divide" class="divide d-none">
-        <p>{{divide}}</p>
-        <button (click)="ok()" >ok</button>
+      <p>{{ divide }}</p>
+      <button (click)="ok()">ok</button>
     </div>
     <div id="puzzle" class="puzzle d-none">
       <p>the number chosen was...</p>
       <p>
         {{ puzzle }}
       </p>
-      <button (click)="remake()" >remake</button>
+      <button (click)="remake()">remake</button>
     </div>
+  </div>
+
+<div class="slide-container">
+  <div class="wrapper">
+    <div class="clash-card barbarian">
+      <div class="clash-card__image clash-card__image--barbarian">
+        <img
+          src="assets/images/drstrange.png"
+          alt="drstrange"
+        />
+      </div>
+      <div class="clash-card__unit-name">The Barbarian</div>
+
+      <div
+        class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix"
+      >
+        <div class="one-third">
+
+        </div>
+
+        <div class="one-third">
+          <div class="stat">{{puzzle}}</div>
+          <div class="stat-value">Speed</div>
+        </div>
+
+        <div class="one-third no-border">
+
+        </div>
+      </div>
+    </div>
+    <!-- end clash-card barbarian-->
   </div>
 </div>
