@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./puzzle.component.css'],
 })
 export class PuzzleComponent implements OnInit {
-  start: boolean = true;
-  ask: string;
-  pair: number = 0;
+  ask: string = 'Is that number even?';
+  even: number = 0;
   odd: number = 0;
   count: number = 0;
   position = [];
@@ -19,29 +18,27 @@ export class PuzzleComponent implements OnInit {
 
   begin() {
     document.getElementById('begin').setAttribute('class', 'begin d-none');
+    document.getElementById('puzzle').setAttribute('class', 'puzzle d-none');
     document.getElementById('game').setAttribute('class', 'game d-block');
-    document.getElementById('pair').setAttribute('class', 'pair d-block');
-    this.start = true;
+    document.getElementById('even').setAttribute('class', 'even d-block');
   }
 
-  isPair(resp: string) {
-    if (this.start == true) this.ask = 'Esse número é par?';
-    else this.ask = 'O resultado da divisão é par?';
-    this.start = false;
-    if (resp == 'yes') this.pair++;
+  isEven(resp: string) {
+    this.ask = 'Is the result of the division even?';
+    if (resp == 'yes') this.even++;
     else {
       this.odd++;
       this.position[this.count] = 1;
     }
     this.count++;
-    document.getElementById('pair').setAttribute('class', 'pair d-none');
+    document.getElementById('even').setAttribute('class', 'even d-none');
     document.getElementById('one').setAttribute('class', 'one d-block');
   }
 
   isOne(resp: string) {
     if (resp == 'yes') this.magic();
     else {
-      document.getElementById('pair').setAttribute('class', 'pair d-block');
+      document.getElementById('even').setAttribute('class', 'even d-block');
       document.getElementById('one').setAttribute('class', 'one d-none');
     }
   }
@@ -57,28 +54,29 @@ export class PuzzleComponent implements OnInit {
   magic() {
     let a = 0;
     let b = 0;
-    if (this.odd == 0) return this.pot(2, this.pair);
+    if (this.odd == 0) return this.pot(2, this.even);
     else {
       for (let i = 0; i < this.count; i++) {
         if (this.position[i] == 1) b += this.pot(2, i); //impar
       }
-      a = this.pot(2, this.pair + this.odd);
+      a = this.pot(2, this.even + this.odd);
       this.puzzle = a + b;
+      console.log(this.puzzle);
+      
       document.getElementById('one').setAttribute('class', 'one d-none');
       document.getElementById('puzzle').setAttribute('class', 'puzzle d-block');
     }
   }
 
   remake() {
-    this.start = true;
-    this.ask = '';
-    this.pair = 0;
+    this.ask = 'Is that number even?';
+    this.even = 0;
     this.odd = 0;
     this.count = 0;
     this.puzzle = 0;
     this.position = [];
     document.getElementById('one').setAttribute('class', 'one d-none');
     document.getElementById('game').setAttribute('class', 'game d-none');
-    document.getElementById('begin').setAttribute('class', 'begin d-block');  
+    document.getElementById('begin').setAttribute('class', 'begin d-block');
   }
 }

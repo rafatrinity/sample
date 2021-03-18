@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CharactersModule } from './characters/characters.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { PuzzleModule } from './puzzle/puzzle.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NavbarModule } from './navbar/navbar.module';
     BrowserModule,
     BrowserAnimationsModule,
     CharactersModule,
-    NavbarModule
+    NavbarModule,
+    PuzzleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

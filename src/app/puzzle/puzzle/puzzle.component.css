@@ -1,0 +1,9 @@
+.container{
+    height: 100vh;
+}
+p{
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 3em;
+}
