@@ -20,6 +20,7 @@ export class PuzzleComponent implements OnInit {
   begin() {
     document.getElementById('begin').setAttribute('class', 'begin d-none');
     document.getElementById('game').setAttribute('class', 'game d-block');
+    document.getElementById('pair').setAttribute('class', 'pair d-block');
     this.start = true;
   }
 
@@ -38,13 +39,10 @@ export class PuzzleComponent implements OnInit {
   }
 
   isOne(resp: string) {
-    if (resp == 'yes') {
-      this.magic();
-      this.resetVariables();
-    }
-    else{
+    if (resp == 'yes') this.magic();
+    else {
       document.getElementById('pair').setAttribute('class', 'pair d-block');
-      document.getElementById('one').setAttribute('class', 'one d-none');  
+      document.getElementById('one').setAttribute('class', 'one d-none');
     }
   }
 
@@ -66,11 +64,12 @@ export class PuzzleComponent implements OnInit {
       }
       a = this.pot(2, this.pair + this.odd);
       this.puzzle = a + b;
-      //?manipular dom
+      document.getElementById('one').setAttribute('class', 'one d-none');
+      document.getElementById('puzzle').setAttribute('class', 'puzzle d-block');
     }
   }
 
-  resetVariables() {
+  remake() {
     this.start = true;
     this.ask = '';
     this.pair = 0;
@@ -78,5 +77,9 @@ export class PuzzleComponent implements OnInit {
     this.count = 0;
     this.puzzle = 0;
     this.position = [];
+    
   }
+  document.getElementById('one').setAttribute('class', 'one d-none');
+  document.getElementById('game').setAttribute('class', 'game d-none');
+  document.getElementById('begin').setAttribute('class', 'begin d-block');
 }

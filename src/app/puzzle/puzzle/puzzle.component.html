@@ -6,13 +6,21 @@
 
   <div id="game" class="game d-none">
     <div id="pair" class="pair">
-        <p>{{ask}}</p>
+      <p>{{ ask }}</p>
       <button (click)="isPair('yes')">yes</button>
       <button (click)="isPair('no')">no</button>
     </div>
     <div id="one" class="one d-none">
+      <p>the result of the division is one?</p>
       <button (click)="isOne('yes')">yes</button>
       <button (click)="isOne('no')">no</button>
+    </div>
+    <div id="puzzle" class="puzzle d-none">
+      <p>the number chosen was...</p>
+      <p>
+        {{ puzzle }}
+      </p>
+      <button (click)="remake()" >remake</button>
     </div>
   </div>
 </div>
