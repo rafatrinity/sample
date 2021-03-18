@@ -28,18 +28,16 @@ export class PuzzleComponent implements OnInit {
 
   isEven(resp: string) {
     this.ask = 'Is the result of the division even?';
+    document.getElementById('even').setAttribute('class', 'even d-none');
     if (resp == 'yes') {
       this.even++;
-      this.divide = 'subtract divide by 2.';
-      document.getElementById('even').setAttribute('class', 'even d-none');
-      document.getElementById('divide').setAttribute('class', 'divide d-block');
+      this.divide = 'divide by 2.';
     } else {
       this.odd++;
       this.position[this.count] = 1;
       this.divide = 'subtract one and divide by 2.';
-      document.getElementById('even').setAttribute('class', 'even d-none');
-      document.getElementById('divide').setAttribute('class', 'divide d-block');
     }
+    document.getElementById('divide').setAttribute('class', 'divide d-block');
     this.count++;
   }
 
@@ -49,11 +47,9 @@ export class PuzzleComponent implements OnInit {
   }
 
   isOne(resp: string) {
+    document.getElementById('one').setAttribute('class', 'one d-none');
     if (resp == 'yes') this.magic();
-    else {
-      document.getElementById('even').setAttribute('class', 'even d-block');
-      document.getElementById('one').setAttribute('class', 'one d-none');
-    }
+    else document.getElementById('even').setAttribute('class', 'even d-block');
   }
 
   pot(a: number, b: number): number {
@@ -67,7 +63,7 @@ export class PuzzleComponent implements OnInit {
   magic() {
     let a = 0;
     let b = 0;
-    if (this.odd == 0) return this.pot(2, this.even);
+    if (this.odd == 0) this.puzzle = this.pot(2, this.even);
     else {
       for (let i = 0; i < this.count; i++) {
         if (this.position[i] == 1) b += this.pot(2, i); //impar
@@ -75,10 +71,8 @@ export class PuzzleComponent implements OnInit {
       a = this.pot(2, this.even + this.odd);
       this.puzzle = a + b;
       console.log(this.puzzle);
-
-      document.getElementById('one').setAttribute('class', 'one d-none');
-      document.getElementById('puzzle').setAttribute('class', 'puzzle d-block');
     }
+    document.getElementById('puzzle').setAttribute('class', 'puzzle d-block');
   }
 
   remake() {
