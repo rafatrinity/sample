@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-puzzle',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./puzzle.component.scss'],
 })
 export class PuzzleComponent implements OnInit {
+  env = environment.assets;
   ask: string = 'Is that number even?';
   even: number = 0;
   odd: number = 0;

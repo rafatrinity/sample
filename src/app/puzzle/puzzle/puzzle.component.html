@@ -5,7 +5,7 @@
     <div class="clash-card barbarian">
       <div class="clash-card__image clash-card__image--barbarian">
         <img
-          src="assets/images/drstrange.png"
+          src="{{env}}/images/drstrange.png"
           alt="drstrange"
         />
       </div>
@@ -15,30 +15,30 @@
         <div id="begin" class="begin">
             <p>Let's play divination game.</p>
             <p>think of a number greater than one.</p>
-            <button mat-fab color="warn" (click)="begin()">Let's Go!</button>
+            <button mat-fab color="a" (click)="begin()">Let's Go!</button>
           </div>
         
           <div id="game" class="game d-none">
             <div id="even" class="even">
               <p>{{ ask }}</p>
-              <button mat-mini-fab color="warn" (click)="isEven('yes')">yes</button>
-              <button mat-mini-fab color="warn" (click)="isEven('no')">no</button>
+              <button mat-mini-fab color="a" (click)="isEven('yes')">yes</button>
+              <button mat-mini-fab color="a" (click)="isEven('no')">no</button>
             </div>
             <div id="one" class="one d-none">
               <p>the result of the division is one?</p>
-              <button mat-mini-fab color="warn" (click)="isOne('yes')">yes</button>
-              <button mat-mini-fab color="warn" (click)="isOne('no')">no</button>
+              <button mat-mini-fab color="a" (click)="isOne('yes')">yes</button>
+              <button mat-mini-fab color="a" (click)="isOne('no')">no</button>
             </div>
             <div id="divide" class="divide d-none">
               <p>{{ divide }}</p>
-              <button mat-mini-fab color="warn" (click)="ok()">ok</button>
+              <button mat-mini-fab color="a" (click)="ok()">ok</button>
             </div>
             <div id="puzzle" class="puzzle d-none">
               <p>the number chosen was...</p>
               <p class="clash-card__unit-name">
                 {{ puzzle }}
               </p>
-              <button mat-fab color="warn" (click)="remake()">remake</button>
+              <button mat-fab color="a" (click)="remake()">remake</button>
             </div>
           </div>
       </div>
