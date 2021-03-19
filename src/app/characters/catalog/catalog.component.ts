@@ -19,23 +19,29 @@ export class CatalogComponent implements OnInit {
     events: '',
     stories: '',
     orderBy: OrderBy.oldFirst,
-    limit: null,
+    limit: 99,
     offset: null
   };
 
   env = environment.assets;
 
+  data = [];
   characters: Character[];
   ngOnInit(): void {
-    this.getCharacters(this.params)
+    for (let i = 0; i < 1493; i+=99) {
+     this.params.offset=i;
+      this.getCharacters(this.params)
+    }
+    console.log(this.data);
   }
-
   getCharacters(params: Params) {
     this.service
       .getCharacters(params)
       .subscribe((characters: Character[]) => {
-        this.characters = characters;
-        console.log(characters);
+        // this.characters = characters;
+        characters.forEach(e => {
+          this.data.push({name: e.name, description: e.description, thumbnail: e.thumbnail,modified: e.modified,id: e.id});
+        });
       });
   } 
 }
