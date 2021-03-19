@@ -3,7 +3,7 @@ import { CatalogService } from './catalog.service';
 import { Character } from './models/characters';
 import { Params, OrderBy } from './models/params';
 import { environment } from 'src/environments/environment';
-import * as data from '../../../assets/json/characters.json';
+import * as json from '../../../assets/json/characters.json';
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
@@ -26,10 +26,9 @@ export class CatalogComponent implements OnInit {
 
   env = environment.assets;
 
-  data = (data as any).default;
+  data = (json as any).default;
   characters: Character[];
   ngOnInit(): void {
-    console.log(this.data);
   }
   getCharacters(params: Params) {
     this.service
