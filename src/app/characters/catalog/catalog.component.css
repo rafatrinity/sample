@@ -65,4 +65,9 @@
   text-align-last: center; 
   position: relative;
 }
-
+.btnArea{
+  position: fixed;
+  bottom: 8em;
+  right: 2em;
+  z-index: 3;
+}

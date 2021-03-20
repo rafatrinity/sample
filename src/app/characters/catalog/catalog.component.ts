@@ -21,20 +21,48 @@ export class CatalogComponent implements OnInit {
     stories: '',
     orderBy: OrderBy.oldFirst,
     limit: 99,
-    offset: null
+    offset: null,
   };
 
   env = environment.assets;
+  hidden = false;
 
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
+  orderBy(param: string) {
+    switch (param) {
+      case 'name_A-Z':
+        this.data.sort(function (a, b) {
+          return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+        });
+        break;
+      case 'name_Z-A':
+        this.data.sort(function (a, b) {
+          return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
+        });
+        break;
+      case 'date-':
+        this.data.sort(function (a, b) {
+          return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
+        });
+        break;
+      case 'date+':
+        this.data.sort(function (a, b) {
+          return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+        });
+        break;
+
+      default:
+        break;
+    }
+  }
   data = (json as any).default;
   characters: Character[];
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   getCharacters(params: Params) {
-    this.service
-      .getCharacters(params)
-      .subscribe((characters: Character[]) => {
-        this.characters = characters;
-      });
-  } 
+    this.service.getCharacters(params).subscribe((characters: Character[]) => {
+      this.characters = characters;
+    });
+  }
 }
