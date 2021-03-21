@@ -4,7 +4,8 @@ import { CatalogComponent } from './characters/catalog/catalog.component';
 import { PuzzleComponent } from './puzzle/puzzle/puzzle.component'
 const routes: Routes = [
   {path:'catalog', component: CatalogComponent},
-  {path:'puzzle', component: PuzzleComponent}
+  {path:'puzzle', component: PuzzleComponent},
+  { path: '', redirectTo: '/puzzle', pathMatch: 'full' },
 ];
 
 @NgModule({

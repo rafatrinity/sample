@@ -20,7 +20,9 @@ export class NavbarComponent implements OnInit {
   faSearch = faSearch;
   faUser = faUser;
   env = environment.assets;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 
   turnOff() {
     let img;
