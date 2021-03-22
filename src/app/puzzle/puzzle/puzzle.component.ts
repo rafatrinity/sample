@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-
 @Component({
   selector: 'app-puzzle',
   templateUrl: './puzzle.component.html',
@@ -16,32 +15,34 @@ export class PuzzleComponent implements OnInit {
   puzzle: number;
   divide: string;
   constructor() {}
-  
+
   ngOnInit(): void {
     this.animation();
   }
-  
-  animation(){
+
+  animation() {
     const container = document.querySelector('.wrapper');
     const card = document.querySelector<HTMLElement>('.clash-card');
     const img = document.querySelector<HTMLElement>('.img');
-    const txt = document.querySelector<HTMLElement>('.clash-card__unit-description');
+    const txt = document.querySelector<HTMLElement>(
+      '.clash-card__unit-description'
+    );
 
-    container.addEventListener('mousemove', (e)=>{
-      let x = -1*(window.innerWidth/2-e['pageX'])/25;
-      let y = (window.innerHeight/2-e['pageY'])/25;
+    container.addEventListener('mousemove', (e) => {
+      let x = (-1 * (window.innerWidth / 2 - e['pageX'])) / 25;
+      let y = (window.innerHeight / 2 - e['pageY']) / 25;
       card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
     });
-    container.addEventListener('mouseleave', (e)=>{
-      card.style.transition = 'all 0.5s ease'
+    container.addEventListener('mouseleave', (e) => {
+      card.style.transition = 'all 0.5s ease';
       card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-      img.style.transform = 'translateZ(0px)'
-      txt.style.transform = 'translateZ(0px)'
+      img.style.transform = 'translateZ(0px)';
+      txt.style.transform = 'translateZ(0px)';
     });
-    container.addEventListener('mouseenter', (e)=>{
-      card.style.transition = 'none'
-      img.style.transform = 'translateZ(100px)'
-      txt.style.transform = 'translateZ(75px)'
+    container.addEventListener('mouseenter', (e) => {
+      card.style.transition = 'none';
+      img.style.transform = 'translateZ(100px)';
+      txt.style.transform = 'translateZ(75px)';
     });
   }
 
