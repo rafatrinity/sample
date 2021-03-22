@@ -1,3 +1,13 @@
 {
-    "intro":"Vamos jogar um jogo de adivinhação. pense em um número maior que um."
+    "intro":"Vamos jogar um jogo de adivinhação. Pense em um número maior que um.",
+    "btnini":"Vamos!",
+    "even_1":"O número que vc pensou é par?",
+    "even_2":"O resultado da divisão é par?",
+    "divide":"Divida por 2",
+    "sub_divide":"Subtraia 1 e divida por 2",
+    "is_one":"O resultado da divisão deu um?",
+    "remake":"Refazer",
+    "result":"O numero que vc pensou foi...",
+    "yes":"sim",
+    "no": "não"
 }

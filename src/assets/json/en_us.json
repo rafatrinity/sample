@@ -1,3 +1,13 @@
 {
-    "intro":"Let's play divination game. think of a number greater than one."
+    "intro":"Let's play divination game. Think of a number greater than one.",
+    "btnini":"Let's Go!",
+    "even_1":"Is that number even?",
+    "even_2":"Is the result of the division even?",
+    "divide":"Divide by 2",
+    "sub_divide":"Subtract 1 and divide by 2",
+    "is_one":"The result of the division is one?",
+    "remake":"Remake",
+    "result":"The number chosen was...",
+    "yes":"yes",
+    "no": "no"
 }

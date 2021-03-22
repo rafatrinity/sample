@@ -10,7 +10,7 @@ import * as pt_br from '../../../assets/json/pt_br.json';
 })
 export class PuzzleComponent implements OnInit {
   env = environment.assets;
-  ask: string = 'Is that number even?';
+  ask: string;
   even: number = 0;
   odd: number = 0;
   count: number = 0;
@@ -57,7 +57,7 @@ export class PuzzleComponent implements OnInit {
   }
 
   begin() {
-    this.ask = 'Is that number even?';
+    this.ask = this.langue.even_1;
     document.getElementById('begin').setAttribute('class', 'begin d-none');
     document.getElementById('puzzle').setAttribute('class', 'puzzle d-none');
     document.getElementById('divide').setAttribute('class', 'divide d-none');
@@ -66,15 +66,15 @@ export class PuzzleComponent implements OnInit {
   }
 
   isEven(resp: string) {
-    this.ask = 'Is the result of the division even?';
+    this.ask = this.langue.even_2;
     document.getElementById('even').setAttribute('class', 'even d-none');
     if (resp == 'yes') {
       this.even++;
-      this.divide = 'divide by 2.';
+      this.divide = this.langue.divide;
     } else {
       this.odd++;
       this.position[this.count] = 1;
-      this.divide = 'subtract one and divide by 2.';
+      this.divide = this.langue.sub_divide;
     }
     document.getElementById('divide').setAttribute('class', 'divide d-block');
     this.count++;
@@ -115,7 +115,7 @@ export class PuzzleComponent implements OnInit {
   }
 
   remake() {
-    this.ask = 'Is that number even?';
+    this.ask = this.langue.even_1;
     this.even = 0;
     this.odd = 0;
     this.count = 0;

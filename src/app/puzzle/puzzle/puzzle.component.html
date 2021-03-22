@@ -14,30 +14,30 @@
 
         <div id="begin" class="begin">
             <p>{{langue.intro}}</p>
-            <button mat-fab color="a" (click)="begin()">Let's Go!</button>
+            <button mat-fab color="a" (click)="begin()">{{langue.btnini}}</button>
           </div>
         
           <div id="game" class="game d-none">
             <div id="even" class="even">
               <p>{{ ask }}</p>
-              <button mat-mini-fab color="a" (click)="isEven('yes')">yes</button>
-              <button mat-mini-fab color="a" (click)="isEven('no')">no</button>
+              <button mat-mini-fab color="a" (click)="isEven('yes')">{{langue.yes}}</button>
+              <button mat-mini-fab color="a" (click)="isEven('no')">{{langue.no}}</button>
             </div>
             <div id="one" class="one d-none">
-              <p>the result of the division is one?</p>
-              <button mat-mini-fab color="a" (click)="isOne('yes')">yes</button>
-              <button mat-mini-fab color="a" (click)="isOne('no')">no</button>
+              <p>{{langue.is_one}}</p>
+              <button mat-mini-fab color="a" (click)="isOne('yes')">{{langue.yes}}</button>
+              <button mat-mini-fab color="a" (click)="isOne('no')">{{langue.no}}</button>
             </div>
             <div id="divide" class="divide d-none">
               <p>{{ divide }}</p>
               <button mat-mini-fab color="a" (click)="ok()">ok</button>
             </div>
             <div id="puzzle" class="puzzle d-none">
-              <p>the number chosen was...</p>
+              <p>{{langue.result}}</p>
               <p class="resp">
                 {{ puzzle }}
               </p>
-              <button mat-fab color="a" (click)="remake()">remake</button>
+              <button mat-fab color="a" (click)="remake()">{{langue.remake}}</button>
             </div>
           </div>
       </div>
