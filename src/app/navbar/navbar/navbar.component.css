@@ -16,7 +16,7 @@
     border-top-right-radius: 100%; 
     background-color: rgba(40, 40, 40, 0.8);
     margin-bottom: -10em;
-    filter: drop-shadow(0 -6mm 4mm rgb(219, 0, 0));
+    filter: drop-shadow(0 -3mm 2mm rgb(219, 0, 0));
 }
 .mobnav-view{
     position: fixed;

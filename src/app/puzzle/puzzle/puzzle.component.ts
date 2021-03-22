@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import * as en_us from '../../../assets/json/en_us.json';
+import * as pt_br from '../../../assets/json/pt_br.json';
+
 @Component({
   selector: 'app-puzzle',
   templateUrl: './puzzle.component.html',
@@ -14,12 +17,19 @@ export class PuzzleComponent implements OnInit {
   position = [];
   puzzle: number;
   divide: string;
+  langue = (en_us as any).default;
   constructor() {}
 
   ngOnInit(): void {
     this.animation();
+    this.translate('pt-br');
   }
 
+  translate(langue: string) {
+    if (langue == 'pt-br') this.langue = (pt_br as any).default;
+
+    console.log(this.langue);
+  }
   animation() {
     const container = document.querySelector('.wrapper');
     const card = document.querySelector<HTMLElement>('.clash-card');
