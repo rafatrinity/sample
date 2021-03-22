@@ -11,9 +11,6 @@ import * as pt_br from '../../../assets/json/pt_br.json';
 export class PuzzleComponent implements OnInit {
   env = environment.assets;
   ask: string;
-  even: number = 0;
-  odd: number = 0;
-  count: number = 0;
   position = [];
   puzzle: number;
   divide: string;
@@ -69,15 +66,13 @@ export class PuzzleComponent implements OnInit {
     this.ask = this.langue.even_2;
     document.getElementById('even').setAttribute('class', 'even d-none');
     if (resp == 'yes') {
-      this.even++;
       this.divide = this.langue.divide;
+      this.position.push(0);
     } else {
-      this.odd++;
-      this.position[this.count] = 1;
       this.divide = this.langue.sub_divide;
+      this.position.push(1);
     }
     document.getElementById('divide').setAttribute('class', 'divide d-block');
-    this.count++;
   }
 
   ok() {
@@ -91,34 +86,19 @@ export class PuzzleComponent implements OnInit {
     else document.getElementById('even').setAttribute('class', 'even d-block');
   }
 
-  pot(a: number, b: number): number {
-    if (b == 0) return 1;
-    if (b == 1) return a;
-    let c: number = 0;
-    for (let i = 1; i < b; i++) c += a * a;
-    return c;
-  }
-
   magic() {
-    let a = 0;
-    let b = 0;
-    if (this.odd == 0) this.puzzle = this.pot(2, this.even);
-    else {
-      for (let i = 0; i < this.count; i++) {
-        if (this.position[i] == 1) b += this.pot(2, i); //impar
-      }
-      a = this.pot(2, this.even + this.odd);
-      this.puzzle = a + b;
-      console.log(this.puzzle);
+    let resp = 1;
+    for (let i = 0; i < this.position.length; i++) {
+      if (this.position[i] == 1) {
+        resp *= 2;
+        resp += 1;
+      } else resp *= 2;
     }
     document.getElementById('puzzle').setAttribute('class', 'puzzle d-block');
   }
 
   remake() {
     this.ask = this.langue.even_1;
-    this.even = 0;
-    this.odd = 0;
-    this.count = 0;
     this.puzzle = 0;
     this.position = [];
     document.getElementById('one').setAttribute('class', 'one d-none');
