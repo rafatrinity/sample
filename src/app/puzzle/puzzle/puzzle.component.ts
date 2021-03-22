@@ -94,6 +94,7 @@ export class PuzzleComponent implements OnInit {
         resp += 1;
       } else resp *= 2;
     }
+    this.puzzle=resp;
     document.getElementById('puzzle').setAttribute('class', 'puzzle d-block');
   }
 
