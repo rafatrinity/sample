@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import * as en_us from '../../../assets/json/en_us.json';
 import * as pt_br from '../../../assets/json/pt_br.json';
-
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-puzzle',
   templateUrl: './puzzle.component.html',
@@ -15,6 +15,7 @@ export class PuzzleComponent implements OnInit {
   puzzle: number;
   divide: string;
   langue = (en_us as any).default;
+  faCog = faCog;
   constructor() {}
 
   ngOnInit(): void {
