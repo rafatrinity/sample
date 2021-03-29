@@ -1,11 +1,11 @@
-p{
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    // font-size: 3em;
+p {
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  // font-size: 3em;
 }
 
-.mat-mini-fab{
+.mat-mini-fab {
   margin-left: 1em;
   margin-right: 1em;
 }
@@ -15,7 +15,9 @@ p{
 $border-radius-size: 14px;
 $barbarian: #EC9B3B;
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -34,15 +36,17 @@ body {
   height: 100vh;
   perspective: 600px;
 }
-.img{
+
+.img {
   transition: all 0.75s ease-out;
 }
+
 .wrapper {
   padding-top: 6%;
   padding-bottom: 4%;
   max-width: 450px;
   margin: auto;
-  
+
   &:focus {
     outline: 0;
   }
@@ -72,9 +76,10 @@ body {
 
 .clash-card__image--barbarian {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
+
   img {
     width: 300px;
-    position: absolute;    
+    position: absolute;
     top: -95px;
     left: 10px;
   }
@@ -90,44 +95,44 @@ body {
 
 .clash-card__unit-description {
   padding: 20px;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
   transition: all 0.75s ease-out;
 }
 
 .clash-card__unit-stats--barbarian {
   background: $barbarian;
-  
+
   .one-third {
-     border-right: 1px solid #BD7C2F;
+    border-right: 1px solid #BD7C2F;
   }
 }
 
 .clash-card__unit-stats {
-  
+
   color: white;
   font-weight: 700;
   border-bottom-left-radius: $border-radius-size;
   border-bottom-right-radius: $border-radius-size;
-  
+
   .one-third {
     width: 33%;
     float: left;
     padding: 20px 15px;
   }
-  
+
   sup {
     position: absolute;
-    bottom: 4px; 
+    bottom: 4px;
     font-size: 45%;
     margin-left: 2px;
   }
-  
+
   .stat {
     position: relative;
     font-size: 24px;
     margin-bottom: 10px;
   }
-  
+
   .stat-value {
     text-transform: uppercase;
     font-weight: 400;
@@ -140,24 +145,52 @@ body {
 }
 
 .clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 
-.settings{
+.settings {
   display: none;
 }
 
+.conf {
+  box-shadow: 0px 0px 20px 0px rgb(116, 255, 255);
+}
+
+fa-icon {
+  margin: auto;
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.conf:hover {
+  fa-icon {
+    color: white;
+    fill: white;
+    stroke: rgb(78, 240, 255);
+    filter: drop-shadow(0 0 10px rgb(78, 240, 255)) drop-shadow(0 0 200px rgb(78, 240, 255));
+  }
+}
+
+
+
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) { 
-  .wrapper{
+@media (max-width: 767.98px) {
+  .wrapper {
     position: fixed;
     bottom: 120px;
     left: 0;
     right: 0;
+  }
+
+  .conf {
+    position: fixed;
+    top: 3%;
+    right: 5%;
+    z-index: 5;
   }
 }
