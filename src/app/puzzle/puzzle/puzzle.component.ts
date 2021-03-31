@@ -20,11 +20,11 @@ export class PuzzleComponent implements OnInit {
 
   ngOnInit(): void {
     this.animation();
-    this.translate('pt-br');
   }
 
   translate(langue: string) {
     if (langue == 'pt-br') this.langue = (pt_br as any).default;
+    if (langue == 'en-us') this.langue = (en_us as any).default;
 
     console.log(this.langue);
   }
