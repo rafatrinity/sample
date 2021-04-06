@@ -2,7 +2,11 @@
   <div class="col" *ngFor="let character of data">
     <mat-card class="example-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image" style="background-image: url('{{env}}images/icon_ironman.png');"></div>
+        <div
+          mat-card-avatar
+          class="example-header-image"
+          style="background-image: url('{{ env }}images/icon_ironman.png');"
+        ></div>
         <mat-card-title>{{ character.name }}</mat-card-title>
         <mat-card-subtitle>{{ character.id }}</mat-card-subtitle>
       </mat-card-header>
@@ -24,8 +28,25 @@
   </div>
 </div>
 <div class="btnArea">
-  <button mat-fab matBadge="8" matBadgePosition="before" matBadgeSize="large" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
-      Hide
+  <button mat-fab aria-label="menu" [matMenuTriggerFor]="aboveMenu">
+    <fa-icon [icon]="menu"></fa-icon>
   </button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item>
+      <fa-icon [icon]="faSortNumericUp"></fa-icon>
+      <span> Date</span>
+    </button>
+    <button mat-menu-item>
+      <fa-icon [icon]="faSortNumericUpAlt"></fa-icon>
+      <span> Date</span>
+    </button>
+    <button mat-menu-item>
+      <fa-icon [icon]="faSortAlphaUp"></fa-icon>
+      <span> Alpha</span>
+    </button>
+    <button mat-menu-item>
+      <fa-icon [icon]="faSortAlphaUpAlt"></fa-icon>
+      <span> Alpha</span>
+    </button>
+  </mat-menu>
 </div>
-

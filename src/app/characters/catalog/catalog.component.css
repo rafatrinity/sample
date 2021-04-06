@@ -71,3 +71,8 @@
   right: 2em;
   z-index: 3;
 }
+
+button, fa-icon{
+  font-size: x-large;
+}
+

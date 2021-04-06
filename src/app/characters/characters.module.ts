@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [CatalogComponent],
   imports: [
@@ -13,6 +15,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatCardModule,
     MatButtonModule,
     MatBadgeModule,
+    FontAwesomeModule,
+    MatMenuModule,
   ],
   exports: [CatalogComponent],
 })
