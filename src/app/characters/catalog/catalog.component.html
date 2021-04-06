@@ -32,19 +32,19 @@
     <fa-icon [icon]="menu"></fa-icon>
   </button>
   <mat-menu #aboveMenu="matMenu" yPosition="above">
-    <button mat-menu-item>
+    <button (click)="orderBy('date+')" mat-menu-item>
       <fa-icon [icon]="faSortNumericUp"></fa-icon>
       <span> Date</span>
     </button>
-    <button mat-menu-item>
+    <button (click)="orderBy('date-')" mat-menu-item>
       <fa-icon [icon]="faSortNumericUpAlt"></fa-icon>
       <span> Date</span>
     </button>
-    <button mat-menu-item>
+    <button (click)="orderBy('name_A-Z')" mat-menu-item>
       <fa-icon [icon]="faSortAlphaUp"></fa-icon>
       <span> Alpha</span>
     </button>
-    <button mat-menu-item>
+    <button (click)="orderBy('name_Z-A')" mat-menu-item>
       <fa-icon [icon]="faSortAlphaUpAlt"></fa-icon>
       <span> Alpha</span>
     </button>
